@@ -3,39 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main>
+    <nav>
+      <div class="logo">
+        <a href="#">
+          <img src="./images/logo.svg" alt="sneckers" width="100" height="50" >
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="right-meanu">
+        <div class="cart">
+          <img src="./images/icon-cart.svg" alt="cart icon" width="20" height="20">
+          <span class="cart-count">3</span>
+        </div>
+        <div class="profile">
+          <img src="./images/image-avatar.png" alt="profile picture" width="40" height="40">
+        </div> 
+      </div>
+    </nav>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <section class="hero">
 
-  Sneaker Company
+      <div class="product-image-container">
+        <div class="main-">
+          <img src="./images/image-product-1.jpg" alt="main product image" class="main-image" width="400" height="400">
+        </div>
 
-  Fall Limited Edition Sneakers
+        <div class="thumbnails-images-container">
+          <div class="thumbnail-image">
+            <img src="./images/image-product-1-thumbnail.jpg" alt=" thumbnail image 1" width="100" height="100">
+          </div>
+          <div class="thumbnail-image">
+            <img src="./images/image-product-2-thumbnail.jpg" alt=" thumbnail image 2" width="100" height="100">
+          </div>
+          <div class="thumbnail-image">
+            <img src="./images/image-product-3-thumbnail.jpg" alt=" thumbnail image 3" width="100" height="100">
+          </div>
+          <div class="thumbnail-image">
+            <img src="./images/image-product-4-thumbnail.jpg" alt=" thumbnail image 4" width="100" height="100">
+          </div> 
+        </div>
+      </div>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
+      <div class="hero-content">
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <span class="current-price">$125.00</span>
+          <span class="original-price">$250.00</span>
+          <span class="discount">50%</span>
+        </div>
+        <div class="count">
+          <button class="decrease">
+            <img src="./images/icon-minus.svg" alt="decrease quantity" width="10" height="10">
+          </button>
+          <span class="quantity">0</span>
+          <button class="increase">
+            <img src="./images/icon-plus.svg" alt="increase quantity" width="10" height="10">
+          </button>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+  </main>  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
