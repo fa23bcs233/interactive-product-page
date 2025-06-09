@@ -96,7 +96,15 @@ nav .right-menu{
 .cart-count{
     display: inline-block;
     position: absolute;
-    /* more css later on */
+    right: -4px;
+    background: var(--orange);
+    font-size: 11px;
+    color: var(--white);
+    width: 20px;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: 900;
+    top: -2px;
 }
 
 .cart-count.zero{
@@ -135,8 +143,18 @@ nav .right-menu{
     max-height: 400px;
     overflow-y: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+#cart-items{
+    width:  100%;
+    list-style: none;
+}
+
+#cart-items > :not(:last-child){
+    border-bottom: 1px solid var(--grayish-blue);
 }
 
 .profile{
@@ -323,7 +341,21 @@ nav .right-menu{
     filter: brightness(1.5);
 }
 
+.add-to-cart img{
+    height: 14px;
+    width: auto;
+    filter: brightness(0%);
+}
+
 .add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Buttons Styles */
+.add-to-cart , .checkout-button{
     background-color: var(--orange);
     color: var(--black);
     font-weight: 700;
@@ -332,25 +364,56 @@ nav .right-menu{
     border-radius: 8px;
     border: none;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    outline: none
 }
 
-.add-to-cart:hover{
-    background-color: hsla(25.9, 100%, 55.1%, 0.85);
+.add-to-cart:hover, .checkout-button:hover{
+    background-color: hsla(25.9, 100%, 55.1%, 0.75);
 }
 
-.add-to-cart img{
-    height: 14px;
-    width: auto;
-    filter: brightness(0%);
+/* Cart Items Styles */
+.cart-item{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
+.cart-item img.cart-item-image{
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+}
 
+.cart-item .cart-item-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 12px;
+    color: var(--dark-grayish-blue);
+    font-size: 16px;
+}
+
+.cart-item .cart-item-total{
+    font-weight: 700;
+    color: var(--very-dark-blue);
+    margin-left: 8px;
+}
+
+.cart-item .remove-item{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.cart-item .remove-item img{
+    width: 16px;
+    height: auto;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
