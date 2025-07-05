@@ -9,6 +9,7 @@
   <title>Frontend Mentor | E-commerce product page</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  <script defer src="slider.js"></script>
 </head>
 
 <body>
@@ -69,22 +70,35 @@
       <!-- Product Images  -->
       <div class="product-image-container">
         <!-- Main Image Crousal  -->
-        <div class="main-image">
-          <img src="./images/image-product-1.jpg" alt="main product image" class="main-image" width="400" height="400">
+        <div class="main-image-crousal">
+          <div class="main-img-crousal-track">
+            <div class="slide" id="slide1">
+              <img src="./images/image-product-1.jpg" alt="main product image" class="main-image" width="400" height="400">
+            </div>
+            <div class="slide" id="slide2">
+              <img src="./images/image-product-2.jpg" alt="main product image 2" class="main-image" width="400" height="400">
+            </div>
+            <div class="slide" id="slide3">
+              <img src="./images/image-product-3.jpg" alt="main product image 3" class="main-image" width="400" height="400">
+            </div>
+            <div class="slide" id="slide4">
+              <img src="./images/image-product-4.jpg" alt="main product image 4" class="main-image" width="400" height="400">
+            </div>
+          </div>
         </div>
 
         <!-- Thumbnail Images  -->
         <div class="thumbnails-images-container">
-          <div class="thumbnail-image active">
+          <div class="thumbnail-image active" data-refSlide="0" >
             <img src="./images/image-product-1-thumbnail.jpg" alt=" thumbnail image 1" width="100" height="100">
           </div>
-          <div class="thumbnail-image">
+          <div class="thumbnail-image" data-refSlide="1" >
             <img src="./images/image-product-2-thumbnail.jpg" alt=" thumbnail image 2" width="100" height="100">
           </div>
-          <div class="thumbnail-image">
+          <div class="thumbnail-image" data-refSlide="2" >
             <img src="./images/image-product-3-thumbnail.jpg" alt=" thumbnail image 3" width="100" height="100">
           </div>
-          <div class="thumbnail-image">
+          <div class="thumbnail-image" data-refSlide="3" >
             <img src="./images/image-product-4-thumbnail.jpg" alt=" thumbnail image 4" width="100" height="100">
           </div>
         </div>
