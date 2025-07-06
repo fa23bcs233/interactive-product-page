@@ -91,6 +91,10 @@ nav .right-menu {
     gap: 40px;
 }
 
+.close-menu {
+    display: none;
+}
+
 .cart {
     position: relative;
 }

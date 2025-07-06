@@ -23,7 +23,7 @@
       <div class="left-menu">
         <!-- Nav Logo  -->
         <div class="toggle-menu-container">
-          <button id="toggle-menu" class="toggle-menu">
+          <button id="toggle-menu" class="toggle-menu" onclick="document.querySelector('.nav-links').classList.toggle('active');">
             <img src="./images/icon-menu.svg" alt="menu icon" width="20" height="20">
           </button>
         </div>
@@ -34,6 +34,9 @@
         </div>
         <!-- Nav Links -->
         <ul class="nav-links">
+          <li class="close-menu" onclick="document.querySelector('.nav-links').classList.remove('active');">
+            <img src="./images/icon-close.svg" alt="close-menu">
+          </li>
           <li><a href="#"><span>Collections</span></a></li>
           <li><a href="#"><span>Men</span></a></li>
           <li><a href="#"><span>Women</span></a></li>
