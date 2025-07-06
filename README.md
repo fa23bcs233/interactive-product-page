@@ -1,22 +1,25 @@
-# Frontend Mentor - E-commerce product page
+# Frontend Mentor - E-commerce product page solution
 
-![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this e-commerce product page and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
@@ -25,72 +28,189 @@ Your users should be able to:
 - Add items to the cart
 - View the cart and remove items from it
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./screenshot.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+### Links
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Solution URL: [Add solution URL here](https://fa23bcs233.github.io/interactive-product-page/)
+- Live Site URL: [Add live site URL here](https://github.com/fa23bcs233/interactive-product-page/)
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+## My process
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built with
 
-## Building your project
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### What I learned
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+In the challenge I reached the stage where the code was becomming messy and unmangeable therefore I shifted my approach to make the code base into the classes and used OOP concepts. Also to keep the repeating thing more mangeable I implemented the lightbox with the help of DOM instead of repeating the crousal implementations.Learned to use the templates in HTML
 
-## Deploying your project
+There are some blinks of the above stated:
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```html
+  <section class="lightbox">
+    <div class="close">
+      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+          fill="#69707D" fill-rule="evenodd"  onclick="hideLightBox()" />
+      </svg>
+    </div>
+    <div class="lightbox-crousal">
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+    </div>
+  </section>
 
-## Create a custom `README.md`
+  <template id="cart-item-template">
+    <li class="cart-item">
+      <img src="" alt="product image" class="cart-item-image" width="50" height="50">
+      <div class="cart-item-details">
+        <div>
+          <span class="cart-item-name"></span>
+        </div>
+        <div>
+          <span class="cart-item-price"></span> x
+          <span class="cart-item-quantity"></span>
+          <span class="cart-item-total"></span>
+        </div>
+      </div>
+      <button class="remove-item">
+        <img src="./images/icon-delete.svg" alt="remove item icon" width="15" height="15">
+      </button>
+    </li>
+  </template>
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```js
+class Slider{
+    constructor(slider,sliderContainer, sliderTrack, prevButton, nextButton, controls){
+        this.slider = document.querySelector(slider);
+        this.sliderContainer = this.slider.querySelector(sliderContainer);
+        this.prevButton = this.slider.querySelector(prevButton) || undefined;
+        this.nextButton = this.slider.querySelector(nextButton) || undefined;
+        this.controls = this.slider.querySelectorAll(controls) || undefined;
+        this.sliderTrack = this.sliderContainer.querySelector(sliderTrack);
+        this.currentSlideIndex = 0;
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+        this.init();
+    }
 
-## Submitting your solution
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+    init(){
+        this.setSlideIndex(this.currentSlideIndex);
+        if(this.controls){
+            this.setControls();
+        }
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+        this.initNavigation();
+    }
 
-## Sharing your solution
+    transformSlides(){
+        const translateX = this.currentSlideIndex * -100;
+        this.sliderTrack.style.transform = `translateX(${translateX}%)`;
+        this.sliderTrack.style.transition = 'transform 0.3s ease';
+    }
 
-There are multiple places you can share your solution:
+    setSlideIndex(index){
+        this.currentSlideIndex = index;
+        this.transformSlides();
+        this.activateControl();
+    }
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+    activateControl(){
+        this.controls.forEach(ctrl=>{
+            ctrl.classList.remove("active");
+        })
+        this.controls[this.currentSlideIndex].classList.add("active");
+    }
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+    setControls(){
+        this.controls.forEach(control => {
+            control.addEventListener("click", (e) => {
+                const slideIndex = parseInt(e.currentTarget.getAttribute("data-refSlide"));
+                this.setSlideIndex(slideIndex);
+            }); 
+        });
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+    }
+    
+    initNavigation(){
+        this.prevButton?.addEventListener("click", () => {
+            if(this.currentSlideIndex > 0)
+                this.setSlideIndex(this.currentSlideIndex - 1);
+        });
+        this.nextButton?.addEventListener("click", () => {
+            if(this.currentSlideIndex < (this.controls.length - 1))
+                this.setSlideIndex(this.currentSlideIndex + 1);
+        });
+    }
+}
 
-## Got feedback for us?
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+// Implementing the lightbox
+const lightBoxContainer = document.querySelector(".lightbox");
+const lightBox = lightBoxContainer.querySelector(".lightbox-crousal");
+const mainCrousal = document.querySelector(".product-image-container")
+lightBox.innerHTML = mainCrousal.innerHTML;
+new Slider(".lightbox-crousal", ".main-image-crousal", ".main-img-crousal-track", ".prev-slide", ".next-slide", ".thumbnails-images-container .thumbnail-image");
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+function showLightBox(){
+    lightBoxContainer.style.display = "flex";
+}
 
-**Have fun building!** 🚀
+function hideLightBox(){
+    lightBoxContainer.style.display = "none";   
+}
+
+
+// render Cart
+renderCart(){
+        this.cartList.innerHTML = "";
+        if(this.cartItems.length === 0){
+            document.getElementById('empty-cart').removeAttribute('hidden');
+            document.querySelector('.checkout-button').setAttribute("hidden", "");
+            this.cartBadge.textContent = "0";
+            this.cartBadge.setAttribute('hidden', '');
+            this.cartBadge.classList.add('zero');
+        }
+        else {
+            document.getElementById('empty-cart').setAttribute('hidden', '');
+            document.querySelector('.checkout-button').removeAttribute("hidden");
+            this.cartBadge.textContent = this.totalItems;
+            this.cartBadge.removeAttribute('hidden');
+            this.cartBadge.classList.remove('zero');
+        }
+
+        this.cartItems.forEach(cartItem => {
+            const itemElement = this.cartItemTemplate.content.cloneNode(true);
+            console.log(itemElement);
+            itemElement.querySelector('.cart-item-image').src = cartItem.featureImage;
+            itemElement.querySelector('.cart-item-name').textContent = cartItem.name;
+            itemElement.querySelector('.cart-item-quantity').textContent = cartItem.quantity;
+            itemElement.querySelector('.cart-item-price').textContent = `$${(cartItem.price * cartItem.quantity).toFixed(2)}`;
+            itemElement.querySelector('.cart-item-total').textContent = `$${(cartItem.price * cartItem.quantity).toFixed(2)}`;  
+            itemElement.querySelector('.remove-item').addEventListener('click', () => {
+                this.removeItemFromCart(cartItem);
+            });
+            
+            this.cartList.appendChild(itemElement);
+        })
+    }
+```
+
+
+
+
+## Author
+
+- Website - [Muhammad Arham](#)
+- Frontend Mentor - [@fa23bcs233](https://www.frontendmentor.io/profile/fa23bcs233)
+
