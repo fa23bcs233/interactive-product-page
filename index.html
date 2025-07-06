@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | E-commerce product page</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
   <script defer src="script.js"></script>
   <script defer src="slider.js"></script>
 </head>
@@ -21,6 +22,11 @@
 
       <div class="left-menu">
         <!-- Nav Logo  -->
+        <div class="toggle-menu-container">
+          <button id="toggle-menu" class="toggle-menu">
+            <img src="./images/icon-menu.svg" alt="menu icon" width="20" height="20">
+          </button>
+        </div>
         <div class="logo">
           <a href="#">
             <img src="./images/logo.svg" alt="sneckers" width="100" height="50">
@@ -69,36 +75,50 @@
 
       <!-- Product Images  -->
       <div class="product-image-container">
+        <div class="prev-slide">
+          <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+          </svg>
+        </div>
         <!-- Main Image Crousal  -->
-        <div class="main-image-crousal">
+        <div class="main-image-crousal" onclick="showLightBox()">
           <div class="main-img-crousal-track">
             <div class="slide" id="slide1">
-              <img src="./images/image-product-1.jpg" alt="main product image" class="main-image" width="400" height="400">
+              <img src="./images/image-product-1.jpg" alt="main product image" class="main-image" width="400"
+                height="400">
             </div>
             <div class="slide" id="slide2">
-              <img src="./images/image-product-2.jpg" alt="main product image 2" class="main-image" width="400" height="400">
+              <img src="./images/image-product-2.jpg" alt="main product image 2" class="main-image" width="400"
+                height="400">
             </div>
             <div class="slide" id="slide3">
-              <img src="./images/image-product-3.jpg" alt="main product image 3" class="main-image" width="400" height="400">
+              <img src="./images/image-product-3.jpg" alt="main product image 3" class="main-image" width="400"
+                height="400">
             </div>
             <div class="slide" id="slide4">
-              <img src="./images/image-product-4.jpg" alt="main product image 4" class="main-image" width="400" height="400">
+              <img src="./images/image-product-4.jpg" alt="main product image 4" class="main-image" width="400"
+                height="400">
             </div>
           </div>
         </div>
 
+        <div class="next-slide">
+          <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+          </svg>
+        </div>
         <!-- Thumbnail Images  -->
         <div class="thumbnails-images-container">
-          <div class="thumbnail-image active" data-refSlide="0" >
+          <div class="thumbnail-image active" data-refSlide="0">
             <img src="./images/image-product-1-thumbnail.jpg" alt=" thumbnail image 1" width="100" height="100">
           </div>
-          <div class="thumbnail-image" data-refSlide="1" >
+          <div class="thumbnail-image" data-refSlide="1">
             <img src="./images/image-product-2-thumbnail.jpg" alt=" thumbnail image 2" width="100" height="100">
           </div>
-          <div class="thumbnail-image" data-refSlide="2" >
+          <div class="thumbnail-image" data-refSlide="2">
             <img src="./images/image-product-3-thumbnail.jpg" alt=" thumbnail image 3" width="100" height="100">
           </div>
-          <div class="thumbnail-image" data-refSlide="3" >
+          <div class="thumbnail-image" data-refSlide="3">
             <img src="./images/image-product-4-thumbnail.jpg" alt=" thumbnail image 4" width="100" height="100">
           </div>
         </div>
@@ -152,8 +172,21 @@
   </div>
 
 
+  <section class="lightbox">
+    <div class="close">
+      <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+          fill="#69707D" fill-rule="evenodd" / onclick="hideLightBox()">
+      </svg>
+    </div>
+    <div class="lightbox-crousal">
+
+    </div>
+  </section>
+
   <!-- Cart Item Template -->
-   <template id="cart-item-template">
+  <template id="cart-item-template">
     <li class="cart-item">
       <img src="" alt="product image" class="cart-item-image" width="50" height="50">
       <div class="cart-item-details">
@@ -170,7 +203,7 @@
         <img src="./images/icon-delete.svg" alt="remove item icon" width="15" height="15">
       </button>
     </li>
-   </template>
+  </template>
 </body>
 
 </html>

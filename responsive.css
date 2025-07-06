@@ -1,0 +1,86 @@
+/***************** Media Queries *************/
+@media (max-width: 720px) {
+    main{
+        padding: 0px;
+    }
+
+    nav {
+        padding: 0px 20px;
+    }
+    nav .left-menu, nav .right-menu {
+        gap: 12px;
+    }
+
+
+    
+    .toggle-menu-container {
+        display: flex;
+    }
+    .toggle-menu-container button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;    
+    }
+    .toggle-menu-container  img{
+        height: 16px;
+    }
+
+
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero{
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+        gap: 0px;
+    }
+
+    .product-image-container {
+        width: 100%;
+    }
+    .main-image-crousal{
+        border-radius: 0px;
+        margin: 0px;
+        pointer-events: none;
+        height: 80vw;
+    }
+
+    .thumbnails-images-container{
+        display: none;
+    }
+
+    .hero-content{
+        padding: 20px 30px 
+    }
+
+    .product-image-container .prev-slide, .product-image-container .next-slide{
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev-slide{
+        left: 12px;
+        transform: translate(0%);
+    }
+
+    .next-slide{
+        right: 12px;
+        transform: translate(0%);
+    }
+}
+
+@media (max-width: 400px) {
+    .add-to-cart-container{
+        flex-direction: column;
+    }
+
+    .add-to-cart-container .count{
+        width: 100%;
+    }
+
+
+}
